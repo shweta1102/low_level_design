@@ -1,4 +1,4 @@
-package java.main.parkinglot.model;
+package java.main.parking.model.vehicle;
 
 public enum VehicleType {
     CAR,

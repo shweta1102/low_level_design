@@ -1,8 +1,9 @@
-package java.main.parking.model;
+package src.java.main.parking.model;
 
-import java.main.parking.model.vehicle.Vehicle;
-import java.main.parking.strategy.fee.FeeCalculation;
-import java.main.parking.strategy.fee.HourBasedFeeCalculation;
+import src.java.main.parking.model.vehicle.Vehicle;
+import src.java.main.parking.strategy.fee.FeeCalculation;
+import src.java.main.parking.strategy.fee.HourBasedFeeCalculation;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -33,7 +34,7 @@ public class ParkingLot {
         return true;
     }
 
-    public synchronized String parkVehicle(Vehicle vehicle) {
+    public synchronized String parkVehicle(Vehicle vehicle) throws Exception {
         //get the first available slot
         ParkingSlot slot = null;
         for (ParkingLevel level : levels) {
@@ -41,13 +42,16 @@ public class ParkingLot {
             if (!availableSlots.isEmpty()) {
                 slot = availableSlots.getFirst();
                 //park vehicle
+                System.out.println("Slot available "+ slot.getSlotNumber());
                 slot.setAvailable(false);
+                Ticket ticket = new Ticket(vehicle, slot, System.currentTimeMillis());
+                //generate ticket and return ticket number
+                activeTickets.put(ticket.getTicketId(), ticket);
+                System.out.println("Ticket Generated" + ticket.getTicketId());
+                return ticket.getTicketId();
             }
         }
-        Ticket ticket = new Ticket(vehicle, slot, System.currentTimeMillis());
-        //generate ticket and return ticket number
-        activeTickets.put(ticket.getTicketId(), ticket);
-        return ticket.getTicketId();
+        throw new Exception("No available spot for " + vehicle.getType());
     }
 
     public synchronized double unParkVehicle(Ticket ticket) {

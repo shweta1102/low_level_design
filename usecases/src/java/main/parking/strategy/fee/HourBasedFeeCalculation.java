@@ -1,6 +1,6 @@
-package java.main.parking.strategy.fee;
+package src.java.main.parking.strategy.fee;
 
-import java.main.parking.model.Ticket;
+import src.java.main.parking.model.Ticket;
 
 public class HourBasedFeeCalculation implements FeeCalculation {
     private static final int RATE_PER_HOUR = 10;

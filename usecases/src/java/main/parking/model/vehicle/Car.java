@@ -1,4 +1,4 @@
-package java.main.parking.model.vehicle;
+package src.java.main.parking.model.vehicle;
 
 public class Car extends Vehicle {
     VehicleType type;

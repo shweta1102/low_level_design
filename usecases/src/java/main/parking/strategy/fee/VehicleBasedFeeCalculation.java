@@ -1,7 +1,7 @@
-package java.main.parking.strategy.fee;
+package src.java.main.parking.strategy.fee;
 
-import java.main.parking.model.Ticket;
-import java.main.parking.model.vehicle.VehicleType;
+import src.java.main.parking.model.Ticket;
+import src.java.main.parking.model.vehicle.VehicleType;
 import java.util.HashMap;
 import java.util.Map;
 

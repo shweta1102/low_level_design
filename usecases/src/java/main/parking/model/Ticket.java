@@ -1,6 +1,6 @@
-package java.main.parking.model;
+package src.java.main.parking.model;
 
-import java.main.parking.model.vehicle.Vehicle;
+import src.java.main.parking.model.vehicle.Vehicle;
 import java.util.UUID;
 
 public class Ticket {

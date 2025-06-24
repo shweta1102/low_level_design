@@ -1,6 +1,6 @@
-package java.main.parking.model;
+package src.java.main.parking.model;
 
-import java.main.parking.model.vehicle.VehicleType;
+import src.java.main.parking.model.vehicle.VehicleType;
 
 public class ParkingSlot {
     private VehicleType type;

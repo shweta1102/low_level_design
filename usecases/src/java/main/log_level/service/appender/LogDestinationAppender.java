@@ -1,4 +1,5 @@
-package src.java.main.log_level.model;
+package src.java.main.log_level.service.appender;
 
-public class LogDestinationAppender {
+public interface LogDestinationAppender {
+    void log(String message);
 }
